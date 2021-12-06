@@ -1,0 +1,21 @@
+words =["i","love","leetcode","i","love","coding"]
+d={}
+k=3
+words.sort()
+print(words)
+for i in range(len(words)):
+    if words[i] not in d:
+        d[words[i]]=1
+    else:
+        d[words[i]]+=1
+
+d={k:v for k,v in sorted(d.items(),key=lambda item:item[1],reverse=True)}
+for i in d:
+    if k!=0:
+        print(i,end=' ')
+        k-=1
+    if k==0:
+        break
+        
+        
+        
