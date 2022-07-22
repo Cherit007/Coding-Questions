@@ -1,0 +1,33 @@
+// if n=5
+//00000 00001 00010 00100 00101 01000 01001 01010 10000 10001 10010 10100 10101
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int bin (int n,int k,int a[]){
+    if(n==k){
+        for(int i=0;i<n;i++)
+        cout<<a[i];
+        cout<<endl;
+        return 0;
+    }
+    if(a[k-1]!=1){
+        a[k]=0;
+        bin(n,k+1,a);
+        a[k]=1;
+        bin(n,k+1,a);
+    }
+    else{
+        a[k]=0;
+        bin(n,k+1,a);
+    }
+}
+int main() {
+    // Write C++ code here
+    int n=5,k=0;
+    int a[n];
+    a[0]=0;
+    bin(n,k,a);
+    return 0;
+}
+
